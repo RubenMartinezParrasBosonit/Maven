@@ -1,21 +1,19 @@
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Optional;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Persona {
     private String nombre;
     private String poblacion;
     private String edad;
 
-    public Persona(String nombre, String poblacion, String edad) {
-        this.setNombre(nombre);
-        this.setPoblacion(poblacion);
-        this.setEdad(edad);
-    }
-
-    public Persona() {
-        this.setNombre("Nombre");
-        this.setPoblacion("Poblacion");
-        this.setEdad("-1");
-    }
 
     public Persona(String[] persona) {
 
@@ -47,32 +45,8 @@ public class Persona {
         this.setEdad(optEdad.get());
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getPoblacion() {
-        return poblacion;
-    }
-
-    public void setPoblacion(String poblacion) {
-        this.poblacion = poblacion;
-    }
-
-    public String getEdad() {
-        return edad;
-    }
-
     public int getEdadInt() {
         return Integer.parseInt(edad);
-    }
-
-    public void setEdad(String edad) {
-        this.edad = edad;
     }
 
     @Override
