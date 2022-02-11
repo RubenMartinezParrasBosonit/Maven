@@ -1,9 +1,9 @@
+import org.modelmapper.ModelMapper;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -62,6 +62,14 @@ public class Main {
         System.out.println(p.getPoblacion());
         System.out.println(p.getEdad());
     });*/
+
+        //Testeando ModelMapper
+        PersonaPrueba personaPrueba = new PersonaPrueba(new NombreApellidos("Rubén", "Martínez"));
+        ModelMapper modelMapper = new ModelMapper();
+        PersonaPruebaDTO personaPruebaDTO = modelMapper.map(personaPrueba, PersonaPruebaDTO.class);
+        System.out.println(personaPrueba);
+        System.out.println(personaPruebaDTO);
+        //Funciona perfectamente
 
     }
 
